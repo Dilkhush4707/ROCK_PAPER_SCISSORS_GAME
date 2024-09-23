@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCK-PEPER-SCISSORS</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="unotch"></div>
+      <div class="outer-box">
+        <div class="heading"><h1>Rock Paper Scissors</h1></div>
+        <div class="score">
+          <div class="score_heading">SCORE</div>
+          <div class="score_win">
+            <div class="score_result">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="button_option">
+        <div class="button_option1">
+          <div>
+            <button
+              class="button_style"
+              id="rock"
+              onclick="
+         user='Rock';
+        computerchoice= genrateComputerChoice();
+        let=resultmsg=getResult(computerchoice,user);
+        showResult(user,computerchoice,resultmsg);
+        "
+            >
+              <div class="rockimg"></div>
+            </button>
+          </div>
+          <button
+            class="button_style"
+            id="Paper"
+            onclick="
+         user='Paper';
+         computerchoice= genrateComputerChoice();
+        let resultmsg=getResult(computerchoice,user);
+        showResult(user,computerchoice,resultmsg);
+        "
+          >
+            <div class="peperimg"></div>
+          </button>
+        </div>
+        <div class="button_option2">
+          <button
+            class="button_style"
+            id="Scissors"
+            onclick="
+        user='Scissors';
+         computerchoice= genrateComputerChoice();
+        let=resultmsg=getResult(computerchoice,user);
+        showResult(user,computerchoice,resultmsg);
+        "
+          >
+            <div class="scissorsimg"></div>
+          </button>
+        </div>
+        <div class="picked">
+          <div class="Move1 move_size">
+            <p>YOU</p>
+            <div id="userMove"></div>
+          </div>
+          <div class="move2 move_size">
+            <p>AI</p>
+            <div class="computerMove"></div>
+          </div>
+        </div>
+        <div class="matchResult"></div>
+        <button
+          id="reset"
+          onclick="localStorage.clear()
+          reset();
+          showResult();
+      "
+        >
+          RESET
+        </button>
+      </div>
+      <div class="moves"></div>
+      <div class="notch"></div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
